@@ -13,7 +13,7 @@ class ActivityRecycler : AppCompatActivity() {
 
 
         val  b = Bundle()
-        b.putString("tittle","Passing Basics")
+        b.putString("tittle","Receving Basics")
         b.putInt("imageId",R.drawable.ic_receving)
 
         val f = FragmentSkill()

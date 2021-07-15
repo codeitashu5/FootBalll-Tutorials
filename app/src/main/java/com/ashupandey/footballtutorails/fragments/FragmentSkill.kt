@@ -48,6 +48,7 @@ class FragmentSkill : Fragment() {
         //doing all my work here only
         val image = arguments?.getInt("imageId")
         imageViewFarament.setImageResource(image!!)
+        textViewFrame.text = arguments?.getString("tittle")
 
 
         buttonPass.setOnClickListener {
