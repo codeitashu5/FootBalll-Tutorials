@@ -1,5 +1,6 @@
 package com.ashupandey.footballtutorails
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -20,5 +21,7 @@ class MainActivity : AppCompatActivity(),ItemClicked {
 
     override fun itemClickedListner(position: Int) {
         Toast.makeText(this, "${position+1}Clicked", Toast.LENGTH_SHORT).show()
+        val i = Intent(this,ActivityRecycler::class.java)
+        startActivity(i)
     }
 }
