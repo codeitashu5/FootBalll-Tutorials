@@ -19,6 +19,6 @@ class MainActivity : AppCompatActivity(),ItemClicked {
     }
 
     override fun itemClickedListner(position: Int) {
-        Toast.makeText(this, "$position Clicked", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "${position+1}Clicked", Toast.LENGTH_SHORT).show()
     }
 }
