@@ -1,5 +1,6 @@
 package com.ashupandey.footballtutorails.fragments
 
+
 import android.content.Intent
 import android.content.Intent.ACTION_VIEW
 import android.net.Uri
@@ -49,6 +50,8 @@ class FragmentSkill : Fragment() {
         val image = arguments?.getInt("imageId")
         imageViewFarament.setImageResource(image!!)
         textViewFrame.text = arguments?.getString("tittle")
+        
+
 
 
         buttonPass.setOnClickListener {

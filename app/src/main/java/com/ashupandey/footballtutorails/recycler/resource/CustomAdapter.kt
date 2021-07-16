@@ -15,7 +15,6 @@ class CustomAdapter(val list: MutableList<Data>, val obj: MainActivity): Recycle
             itemView.setOnClickListener{
                 obj.itemClickedListner(adapterPosition)
             }
-
         }
     }
 
