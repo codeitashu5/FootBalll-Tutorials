@@ -15,9 +15,9 @@ class DataList {
         mutableList.add(Data("Stamina",R.drawable.ic_stamina))
         mutableList.add(Data("Dribbling",R.drawable.ic_dribbling))
         mutableList.add(Data("Juggling",R.drawable.ic_juggling))
-        mutableList.add(Data("Clubs",R.drawable.ic_clubs))
         mutableList.add(Data("Diet",R.drawable.ic_diet))
         mutableList.add(Data("Streaches",R.drawable.ic_straches))
+        mutableList.add(Data("Clubs",R.drawable.ic_clubs))
 
 
 

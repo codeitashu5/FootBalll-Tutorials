@@ -11,17 +11,26 @@ import com.ashupandey.footballtutorails.recycler.resource.ItemClicked
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(),ItemClicked {
+    private val list = DataList().listRecycler()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recyclerView.adapter = CustomAdapter(DataList().listRecycler(),this)
+
+
+        recyclerView.adapter = CustomAdapter(list,this)
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
     override fun itemClickedListner(position: Int) {
-        Toast.makeText(this, "${position+1}Clicked", Toast.LENGTH_SHORT).show()
         val i = Intent(this,ActivityRecycler::class.java)
+        i.putExtra( KEY_TITTLE , list[position].skill)
         startActivity(i)
+    }
+
+
+    companion object{
+        const val KEY_TITTLE = "what"
     }
 }

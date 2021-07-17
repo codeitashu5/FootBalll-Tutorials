@@ -5,18 +5,24 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.commit
+import com.ashupandey.footballtutorails.MainActivity.Companion.KEY_TITTLE
 import com.ashupandey.footballtutorails.fragments.FragmentSkill
 import kotlinx.android.synthetic.main.activity_recycler.*
 
 class ActivityRecycler : AppCompatActivity() {
-    val  b = Bundle()
+    private val  b = Bundle()
+    lateinit var s : String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
+        s = intent?.extras?.getString(KEY_TITTLE).toString()
 
 
-        b.putString("tittle","Passing Basics")
-        b.putInt("imageId",R.drawable.ic_passing)
+
+
+        b.putString("tittle","$s Basics")
+        b.putInt("imageId",R.drawable.ic_kid)
 
         val f = FragmentSkill()
         f.arguments = b
@@ -40,19 +46,56 @@ class ActivityRecycler : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId){
-            R.id.itemArrow ->{
+            R.id.basic ->{
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
+
                 val frag =FragmentSkill().apply {
                    val  bundel =  Bundle()
                     arguments = bundel.apply {
-                        putString("tittle","Passing Intermediate")
-                        putInt("imageId",R.drawable.ic_passing)
+                        putString("tittle","$s Basics")
+                        putInt("imageId",R.drawable.ic_kid)
                     }
                 }
                 replace(R.id.containerFragment,frag)
-                addToBackStack(null)
             }
+
+
+
+
+                return true
+            }
+
+            R.id.medium ->{
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    val frag =FragmentSkill().apply {
+                        val  bundel =  Bundle()
+                        arguments = bundel.apply {
+                            putString("tittle","$s Intermediate")
+                            putInt("imageId",R.drawable.ic_modreat)
+                        }
+                    }
+                    replace(R.id.containerFragment,frag)
+
+                }
+
+                return true
+            }
+
+            R.id.hard ->{
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    val frag =FragmentSkill().apply {
+                        val  bundel =  Bundle()
+                        arguments = bundel.apply {
+                            putString("tittle","$s Advance")
+                            putInt("imageId",R.drawable.ic_superman)
+                        }
+                    }
+                    replace(R.id.containerFragment,frag)
+
+                }
 
                 return true
             }
